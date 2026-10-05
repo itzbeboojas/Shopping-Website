@@ -1,0 +1,2209 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>DailyCart</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- =====================================================
+                         HEADER
+    ====================================================== -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <!-- LOGO -->
+
+            <a href="#home" class="logo-area">
+
+                <img src="images/logo.png"
+                     alt="NAAYUU Logo"
+                     class="logo-image"
+                     onerror="this.style.display='none';">
+
+                <div class="text-logo">
+                    <span>DailyCart</span>
+                    <small>One Place Multi Mart</small>
+                </div>
+
+            </a>
+
+
+            <!-- NAVIGATION -->
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="#home">Home</a>
+                </li>
+
+                <li>
+                    <a href="#products">Products</a>
+                </li>
+
+                <li>
+                    <a href="#offers">Offers</a>
+                </li>
+
+                <li>
+                    <a href="#about">About</a>
+                </li>
+
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+
+            </ul>
+
+
+            <!-- NAV RIGHT -->
+
+            <div class="nav-actions">
+
+                <!-- SEARCH -->
+
+                <div class="search-box">
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search products..."
+                    >
+
+                    <button onclick="searchProduct()">
+                        🔍
+                    </button>
+
+                </div>
+
+
+                <!-- CART -->
+
+                <button
+                    class="cart-btn"
+                    onclick="showCart()"
+                >
+
+                    🛒 Cart:
+                    <span id="cartCount">0</span>
+
+                </button>
+
+
+                <!-- DARK MODE -->
+
+                <button
+                    class="theme-btn"
+                    onclick="toggleDarkMode()"
+                    title="Toggle Dark Mode"
+                >
+                    🌙
+                </button>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =====================================================
+                         HERO SLIDER
+    ====================================================== -->
+
+    <section id="home" class="hero-slider">
+
+        <!-- SLIDE 1 -->
+
+        <div class="hero-slide active">
+
+            <img
+                src="images/image1.jpg"
+                alt="New Fashion Collection"
+            >
+
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content">
+
+                <p class="hero-label">
+                    NEW COLLECTION 2026
+                </p>
+
+                <h1>
+                    Style That
+                    <span>Defines You.</span>
+                </h1>
+
+                <p>
+                    Discover fashion, electronics, books,
+                    beauty products, groceries and more.
+                </p>
+
+                <a href="#products" class="hero-btn">
+                    Shop Now →
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SLIDE 2 -->
+
+        <div class="hero-slide">
+
+            <img
+                src="images/image3.jpg"
+                alt="Fashion Collection"
+            >
+
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content">
+
+                <p class="hero-label">
+                    TRENDING NOW
+                </p>
+
+                <h1>
+                    Wear Your
+                    <span>Confidence.</span>
+                </h1>
+
+                <p>
+                    Fresh looks, modern designs and
+                    fashion made especially for you.
+                </p>
+
+                <a href="#products" class="hero-btn">
+                    Explore Collection →
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SLIDE 3 -->
+
+        <div class="hero-slide">
+
+            <img
+                src="images/image4.jpg"
+                alt="Women's Fashion"
+            >
+
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content">
+
+                <p class="hero-label">
+                    PREMIUM STYLE
+                </p>
+
+                <h1>
+                    Fashion
+                    <span>Reimagined.</span>
+                </h1>
+
+                <p>
+                    Elegant outfits, accessories and
+                    products created for every moment.
+                </p>
+
+                <a href="#products" class="hero-btn">
+                    Shop Collection →
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SLIDE 4 -->
+
+        <div class="hero-slide">
+
+            <img
+                src="images/ChatGPT Image Sep 7, 2026, 01_26_42 PM.png"
+                alt="Latest Collection"
+            >
+
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content">
+
+                <p class="hero-label">
+                    LIMITED EDITION
+                </p>
+
+                <h1>
+                    Look
+                    <span>Unforgettable.</span>
+                </h1>
+
+                <p>
+                    Stand out with our exclusive
+                    collection and special products.
+                </p>
+
+                <a href="#products" class="hero-btn">
+                    Shop Now →
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SLIDE 5 -->
+
+        <div class="hero-slide">
+
+            <img
+                src="images/image5.jpg"
+                alt="Shopping Sale"
+            >
+
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content">
+
+                <p class="hero-label">
+                    SPECIAL SALE
+                </p>
+
+                <h1>
+                    Your Style,
+                    <span>Your Rules.</span>
+                </h1>
+
+                <p>
+                    Grab your favourite products before
+                    they're gone.
+                </p>
+
+                <a href="#offers" class="hero-btn">
+                    View Offers →
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SLIDER BUTTONS -->
+
+        <button
+            class="slider-arrow prev"
+            onclick="changeSlide(-1)"
+        >
+            ❮
+        </button>
+
+        <button
+            class="slider-arrow next"
+            onclick="changeSlide(1)"
+        >
+            ❯
+        </button>
+
+
+
+        <!-- SLIDER DOTS -->
+
+        <div class="slider-dots">
+
+            <span
+                class="dot active"
+                onclick="currentSlide(0)"
+            ></span>
+
+            <span
+                class="dot"
+                onclick="currentSlide(1)"
+            ></span>
+
+            <span
+                class="dot"
+                onclick="currentSlide(2)"
+            ></span>
+
+            <span
+                class="dot"
+                onclick="currentSlide(3)"
+            ></span>
+
+            <span
+                class="dot"
+                onclick="currentSlide(4)"
+            ></span>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+                     CATEGORY BUTTONS
+    ====================================================== -->
+
+    <section class="category-section">
+
+        <div class="section-heading">
+
+            <p>SHOP BY CATEGORY</p>
+
+            <h2>
+                Explore
+                <span>Categories</span>
+            </h2>
+
+            <div class="heading-line"></div>
+
+        </div>
+<div class="category category-tabs">
+
+    <button class="active" onclick="filterCategory('all')">
+        All
+    </button>
+
+    <button onclick="filterCategory('clothing')">
+        Clothing
+    </button>
+
+    <button onclick="filterCategory('shoes')">
+        Shoes
+    </button>
+
+    <button onclick="filterCategory('jewellery')">
+        Jewellery
+    </button>
+
+    <button onclick="filterCategory('books')">
+        Books
+    </button>
+
+    <button onclick="filterCategory('electronics')">
+        Electronics
+    </button>
+
+    <button onclick="filterCategory('groceries')">
+        Groceries
+    </button>
+
+    <button onclick="filterCategory('beauty')">
+        Beauty
+    </button>
+
+</div>
+    </section>
+
+
+
+    <!-- SEARCH RESULT -->
+
+    <div
+        id="searchMessage"
+        class="search-message"
+    ></div>
+
+
+
+    <!-- =====================================================
+                         PRODUCTS
+    ====================================================== -->
+
+    <section id="products" class="products-section">
+
+        <div class="section-heading">
+
+            <p>OUR COLLECTION</p>
+
+            <h2>
+                Trending
+                <span>Products</span>
+            </h2>
+
+            <div class="heading-line"></div>
+
+            <p class="section-description">
+                Explore fashion, shoes, jewellery, books,
+                electronics, groceries and beauty products.
+            </p>
+
+        </div>
+
+
+
+        <div class="products-grid">
+
+
+            <!-- ================= CLOTHING ================= -->
+
+
+            <!-- PRODUCT 1 -->
+
+            <div class="product-card"
+                 data-category="clothing"
+                 data-name="red party dress">
+
+                <div class="product-image-container">
+
+                    <span class="sale-badge">
+                        20% OFF
+                    </span>
+
+                    <img
+                        src="images/image1.jpg"
+                        alt="Red Party Dress"
+                    >
+
+                </div>
+
+                <div class="product-details">
+
+                    <span class="product-category">
+                        CLOTHING
+                    </span>
+
+                    <h3>
+                        Red Party Dress
+                    </h3>
+
+                    <p>
+                        Elegant red dress perfect
+                        for parties and special occasions.
+                    </p>
+
+                    <div class="product-price">
+                        ₹1,999
+                        <del>₹2,499</del>
+                    </div>
+
+                    <button
+                        onclick="addToCart('Red Party Dress')"
+                        class="add-cart"
+                    >
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PRODUCT 2 -->
+
+            <div class="product-card"
+                 data-category="clothing"
+                 data-name="black evening dress">
+
+                <div class="product-image-container">
+
+                    <span class="sale-badge">
+                        15% OFF
+                    </span>
+
+                    <img
+                        src="images/image2.jpg"
+                        alt="Black Evening Dress"
+                    >
+
+                </div>
+
+                <div class="product-details">
+
+                    <span class="product-category">
+                        CLOTHING
+                    </span>
+
+                    <h3>
+                        Black Evening Dress
+                    </h3>
+
+                    <p>
+                        Stylish black dress with
+                        a modern elegant design.
+                    </p>
+
+                    <div class="product-price">
+                        ₹2,299
+                        <del>₹2,699</del>
+                    </div>
+
+                    <button
+                        onclick="addToCart('Black Evening Dress')"
+                        class="add-cart"
+                    >
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PRODUCT 3 -->
+
+            <div class="product-card"
+                 data-category="clothing"
+                 data-name="yellow premium top">
+
+                <div class="product-image-container">
+
+                    <span class="sale-badge">
+                        10% OFF
+                    </span>
+
+                    <img
+                        src="images/image3.jpg"
+                        alt="Yellow Premium Top"
+                    >
+
+                </div>
+
+                <div class="product-details">
+
+                    <span class="product-category">
+                        CLOTHING
+                    </span>
+
+                    <h3>
+                        Yellow Premium Top
+                    </h3>
+
+                    <p>
+                        Comfortable and stylish top
+                        for everyday fashion.
+                    </p>
+
+                    <div class="product-price">
+                        ₹999
+                        <del>₹1,099</del>
+                    </div>
+
+                    <button
+                        onclick="addToCart('Yellow Premium Top')"
+                        class="add-cart"
+                    >
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PRODUCT 4 -->
+
+            <div class="product-card"
+                 data-category="clothing"
+                 data-name="white casual top">
+
+                <div class="product-image-container">
+
+                    <span class="sale-badge">
+                        25% OFF
+                    </span>
+
+                    <img
+                        src="images/image4.jpg"
+                        alt="White Casual Top"
+                    >
+
+                </div>
+
+                <div class="product-details">
+
+                    <span class="product-category">
+                        CLOTHING
+                    </span>
+
+                    <h3>
+                        White Casual Top
+                    </h3>
+
+                    <p>
+                        Minimal white top for
+                        a clean everyday look.
+                    </p>
+
+                    <div class="product-price">
+                        ₹899
+                        <del>₹1,199</del>
+                    </div>
+
+                    <button
+                        onclick="addToCart('White Casual Top')"
+                        class="add-cart"
+                    >
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PRODUCT 5 -->
+
+            <div class="product-card"
+                 data-category="clothing"
+                 data-name="classic blue jeans">
+
+                <div class="product-image-container">
+
+                    <span class="sale-badge">
+                        15% OFF
+                    </span>
+
+                    <img
+                        src="images/image5.jpg"
+                        alt="Classic Blue Jeans"
+                    >
+
+                </div>
+
+                <div class="product-details">
+
+                    <span class="product-category">
+                        CLOTHING
+                    </span>
+
+                    <h3>
+                        Classic Blue Jeans
+                    </h3>
+
+                    <p>
+                        Comfortable denim jeans
+                        designed for everyday wear.
+                    </p>
+
+                    <div class="product-price">
+                        ₹1,599
+                        <del>₹1,899</del>
+                    </div>
+
+                    <button
+                        onclick="addToCart('Classic Blue Jeans')"
+                        class="add-cart"
+                    >
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PRODUCT 6 -->
+
+            <div class="product-card"
+                 data-category="clothing"
+                 data-name="black skinny jeans">
+
+                <div class="product-image-container">
+
+                    <span class="sale-badge">
+                        20% OFF
+                    </span>
+
+                    <img
+                        src="images/image6.jpg"
+                        alt="Black Skinny Jeans"
+                    >
+
+                </div>
+
+                <div class="product-details">
+
+                    <span class="product-category">
+                        CLOTHING
+                    </span>
+
+                    <h3>
+                        Black Skinny Jeans
+                    </h3>
+
+                    <p>
+                        Classic black denim with
+                        a comfortable modern fit.
+                    </p>
+
+                    <div class="product-price">
+                        ₹1,699
+                        <del>₹2,099</del>
+                    </div>
+
+                    <button
+                        onclick="addToCart('Black Skinny Jeans')"
+                        class="add-cart"
+                    >
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================= BAGS ================= -->
+
+
+            <!-- PRODUCT 7 -->
+
+            <div class="product-card"
+                 data-category="clothing"
+                 data-name="red luxury handbag">
+
+                <div class="product-image-container">
+
+                    <span class="sale-badge">
+                        30% OFF
+                    </span>
+
+                    <img
+                        src="images/image7.jpg"
+                        alt="Red Luxury Handbag"
+                    >
+
+                </div>
+
+                <div class="product-details">
+
+                    <span class="product-category">
+                        HANDBAG
+                    </span>
+
+                    <h3>
+                        Red Luxury Handbag
+                    </h3>
+
+                    <p>
+                        Premium handbag with
+                        elegant everyday styling.
+                    </p>
+
+                    <div class="product-price">
+                        ₹1,799
+                        <del>₹2,599</del>
+                    </div>
+
+                    <button
+                        onclick="addToCart('Red Luxury Handbag')"
+                        class="add-cart"
+                    >
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PRODUCT 8 -->
+
+            <div class="product-card"
+                 data-category="clothing"
+                 data-name="classic black handbag">
+
+                <div class="product-image-container">
+
+                    <span class="sale-badge">
+                        10% OFF
+                    </span>
+
+                    <img
+                        src="images/image8.jpg"
+                        alt="Classic Black Handbag"
+                    >
+
+                </div>
+
+                <div class="product-details">
+
+                    <span class="product-category">
+                        HANDBAG
+                    </span>
+
+                    <h3>
+                        Classic Black Handbag
+                    </h3>
+
+                    <p>
+                        Spacious premium bag
+                        with a timeless design.
+                    </p>
+
+                    <div class="product-price">
+                        ₹2,199
+                        <del>₹2,449</del>
+                    </div>
+
+                    <button
+                        onclick="addToCart('Classic Black Handbag')"
+                        class="add-cart"
+                    >
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================= SHOES ================= -->
+
+
+            <!-- PRODUCT 9 -->
+
+            <div class="product-card"
+                 data-category="shoes"
+                 data-name="red designer heels">
+
+                <div class="product-image-container">
+
+                    <span class="sale-badge">
+                        25% OFF
+                    </span>
+
+                    <img
+                        src="images/image9.jpg"
+                        alt="Red Designer Heels"
+                    >
+
+                </div>
+
+                <div class="product-details">
+
+                    <span class="product-category">
+                        SHOES
+                    </span>
+
+                    <h3>
+                        Red Designer Heels
+                    </h3>
+
+                    <p>
+                        Statement heels designed
+                        for parties and events.
+                    </p>
+
+                    <div class="product-price">
+                        ₹1,899
+                        <del>₹2,499</del>
+                    </div>
+
+                    <button
+                        onclick="addToCart('Red Designer Heels')"
+                        class="add-cart"
+                    >
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PRODUCT 10 -->
+
+            <div class="product-card"
+                 data-category="shoes"
+                 data-name="yellow fashion heels">
+
+                <div class="product-image-container">
+
+                    <span class="sale-badge">
+                        15% OFF
+                    </span>
+
+                    <img
+                        src="images/image10.jpg"
+                        alt="Yellow Fashion Heels"
+                    >
+
+                </div>
+
+                <div class="product-details">
+
+                    <span class="product-category">
+                        SHOES
+                    </span>
+
+                    <h3>
+                        Yellow Fashion Heels
+                    </h3>
+
+                    <p>
+                        Bright stylish heels
+                        for a confident look.
+                    </p>
+
+                    <div class="product-price">
+                        ₹1,699
+                        <del>₹1,999</del>
+                    </div>
+
+                    <button
+                        onclick="addToCart('Yellow Fashion Heels')"
+                        class="add-cart"
+                    >
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PRODUCT 11 -->
+
+            <div class="product-card"
+                 data-category="shoes"
+                 data-name="casual sneakers">
+
+                <div class="product-image-container">
+
+                    <span class="sale-badge">
+                        NEW
+                    </span>
+
+                    <img
+                        src="images/image14.jpg"
+                        alt="Casual Sneakers"
+                    >
+
+                </div>
+
+                <div class="product-details">
+
+                    <span class="product-category">
+                        SHOES
+                    </span>
+
+                    <h3>
+                        Casual Sneakers
+                    </h3>
+
+                    <p>
+                        Comfortable sneakers for
+                        everyday activities.
+                    </p>
+
+                    <div class="product-price">
+                        ₹1,599
+                        <del>₹1,899</del>
+                    </div>
+
+                    <button
+                        onclick="addToCart('Casual Sneakers')"
+                        class="add-cart"
+                    >
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PRODUCT 12 -->
+
+            <div class="product-card"
+                 data-category="shoes"
+                 data-name="white sneakers">
+
+                <div class="product-image-container">
+
+                    <span class="sale-badge">
+                        10% OFF
+                    </span>
+
+                    <img
+                        src="images/image13.jpg"
+                        alt="White Sneakers"
+                    >
+
+                </div>
+
+                <div class="product-details">
+
+                    <span class="product-category">
+                        SHOES
+                    </span>
+
+                    <h3>
+                        White Sneakers
+                    </h3>
+
+                    <p>
+                        Simple and stylish sneakers
+                        for daily wear.
+                    </p>
+
+                    <div class="product-price">
+                        ₹1,499
+                        <del>₹1,699</del>
+                    </div>
+
+                    <button
+                        onclick="addToCart('White Sneakers')"
+                        class="add-cart"
+                    >
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================= JEWELLERY ================= -->
+
+
+            <!-- PRODUCT 13 -->
+
+            <div class="product-card"
+                 data-category="jewellery"
+                 data-name="gold jewellery set">
+
+                <div class="product-image-container">
+
+                    <span class="sale-badge">
+                        20% OFF
+                    </span>
+
+                    <img
+                        src="images/image11.jpg"
+                        alt="Gold Jewellery Set"
+                    >
+
+                </div>
+
+                <div class="product-details">
+
+                    <span class="product-category">
+                        JEWELLERY
+                    </span>
+
+                    <h3>
+                        Gold Jewellery Set
+                    </h3>
+
+                    <p>
+                        Elegant jewellery set
+                        to complete your outfit.
+                    </p>
+
+                    <div class="product-price">
+                        ₹1,299
+                        <del>₹1,599</del>
+                    </div>
+
+                    <button
+                        onclick="addToCart('Gold Jewellery Set')"
+                        class="add-cart"
+                    >
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PRODUCT 14 -->
+
+            <div class="product-card"
+                 data-category="jewellery"
+                 data-name="gold bracelet">
+
+                <div class="product-image-container">
+
+                    <span class="sale-badge">
+                        NEW
+                    </span>
+
+                    <img
+                        src="images/image15.jpg"
+                        alt="Gold Bracelet"
+                    >
+
+                </div>
+
+                <div class="product-details">
+
+                    <span class="product-category">
+                        BRACELET
+                    </span>
+
+                    <h3>
+                        Gold Bracelet
+                    </h3>
+
+                    <p>
+                        Elegant bracelet for
+                        everyday styling.
+                    </p>
+
+                    <div class="product-price">
+                        ₹799
+                        <del>₹999</del>
+                    </div>
+
+                    <button
+                        onclick="addToCart('Gold Bracelet')"
+                        class="add-cart"
+                    >
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PRODUCT 15 -->
+
+            <div class="product-card"
+                 data-category="jewellery"
+                 data-name="charm bracelet">
+
+                <div class="product-image-container">
+
+                    <span class="sale-badge">
+                        15% OFF
+                    </span>
+
+                    <img
+                        src="images/image16.jpg"
+                        alt="Charm Bracelet"
+                    >
+
+                </div>
+
+                <div class="product-details">
+
+                    <span class="product-category">
+                        BRACELET
+                    </span>
+
+                    <h3>
+                        Charm Bracelet
+                    </h3>
+
+                    <p>
+                        Trendy charm bracelet
+                        for daily wear.
+                    </p>
+
+                    <div class="product-price">
+                        ₹699
+                        <del>₹849</del>
+                    </div>
+
+                    <button
+                        onclick="addToCart('Charm Bracelet')"
+                        class="add-cart"
+                    >
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================= BOOKS ================= -->
+
+
+            <!-- PRODUCT 16 -->
+
+            <div class="product-card"
+                 data-category="books"
+                 data-name="fiction novel">
+
+                <div class="product-image-container">
+
+                    <span class="sale-badge">
+                        BESTSELLER
+                    </span>
+
+                    <img
+                        src="images/image17.jpg"
+                        alt="Fiction Novel"
+                    >
+
+                </div>
+
+                <div class="product-details">
+
+                    <span class="product-category">
+                        BOOKS
+                    </span>
+
+                    <h3>
+                        Fiction Novel
+                    </h3>
+
+                    <p>
+                        Interesting fiction novel
+                        for readers.
+                    </p>
+
+                    <div class="product-price">
+                        ₹399
+                        <del>₹499</del>
+                    </div>
+
+                    <button
+                        onclick="addToCart('Fiction Novel')"
+                        class="add-cart"
+                    >
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PRODUCT 17 -->
+
+            <div class="product-card"
+                 data-category="books"
+                 data-name="study book">
+
+                <div class="product-image-container">
+
+                    <span class="sale-badge">
+                        10% OFF
+                    </span>
+
+                    <img
+                        src="images/image18.jpg"
+                        alt="Study Book"
+                    >
+
+                </div>
+
+                <div class="product-details">
+
+                    <span class="product-category">
+                        BOOKS
+                    </span>
+
+                    <h3>
+                        Study Book
+                    </h3>
+
+                    <p>
+                        Useful study material
+                        for students.
+                    </p>
+
+                    <div class="product-price">
+                        ₹499
+                        <del>₹549</del>
+                    </div>
+
+                    <button
+                        onclick="addToCart('Study Book')"
+                        class="add-cart"
+                    >
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================= ELECTRONICS ================= -->
+
+
+            <!-- PRODUCT 18 -->
+
+            <div class="product-card"
+                 data-category="electronics"
+                 data-name="wireless headphones">
+
+                <div class="product-image-container">
+
+                    <span class="sale-badge">
+                        15% OFF
+                    </span>
+
+                    <img
+                        src="images/image19.jpg"
+                        alt="Wireless Headphones"
+                    >
+
+                </div>
+
+                <div class="product-details">
+
+                    <span class="product-category">
+                        ELECTRONICS
+                    </span>
+
+                    <h3>
+                        Wireless Headphones
+                    </h3>
+
+                    <p>
+                        High-quality sound with
+                        wireless connectivity.
+                    </p>
+
+                    <div class="product-price">
+                        ₹1,999
+                        <del>₹2,399</del>
+                    </div>
+
+                    <button
+                        onclick="addToCart('Wireless Headphones')"
+                        class="add-cart"
+                    >
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PRODUCT 19 -->
+
+            <div class="product-card"
+                 data-category="electronics"
+                 data-name="smart watch">
+
+                <div class="product-image-container">
+
+                    <span class="sale-badge">
+                        NEW
+                    </span>
+
+                    <img
+                        src="images/image20.jpg"
+                        alt="Smart Watch"
+                    >
+
+                </div>
+
+                <div class="product-details">
+
+                    <span class="product-category">
+                        ELECTRONICS
+                    </span>
+
+                    <h3>
+                        Smart Watch
+                    </h3>
+
+                    <p>
+                        Smart features for your
+                        everyday lifestyle.
+                    </p>
+
+                    <div class="product-price">
+                        ₹2,499
+                        <del>₹2,999</del>
+                    </div>
+
+                    <button
+                        onclick="addToCart('Smart Watch')"
+                        class="add-cart"
+                    >
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PRODUCT 20 -->
+
+            <div class="product-card"
+                 data-category="electronics"
+                 data-name="wireless earbuds">
+
+                <div class="product-image-container">
+
+                    <span class="sale-badge">
+                        20% OFF
+                    </span>
+
+                    <img
+                        src="images/image21.jpg"
+                        alt="Wireless Earbuds"
+                    >
+
+                </div>
+
+                <div class="product-details">
+
+                    <span class="product-category">
+                        ELECTRONICS
+                    </span>
+
+                    <h3>
+                        Wireless Earbuds
+                    </h3>
+
+                    <p>
+                        Compact earbuds with
+                        clear audio quality.
+                    </p>
+
+                    <div class="product-price">
+                        ₹1,299
+                        <del>₹1,599</del>
+                    </div>
+
+                    <button
+                        onclick="addToCart('Wireless Earbuds')"
+                        class="add-cart"
+                    >
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================= GROCERIES ================= -->
+
+
+            <!-- PRODUCT 21 -->
+
+            <div class="product-card"
+                 data-category="groceries"
+                 data-name="premium coffee">
+
+                <div class="product-image-container">
+
+                    <span class="sale-badge">
+                        10% OFF
+                    </span>
+
+                    <img
+                        src="images/images22.jpg"
+                        alt="Premium Coffee"
+                    >
+
+                </div>
+
+                <div class="product-details">
+
+                    <span class="product-category">
+                        GROCERIES
+                    </span>
+
+                    <h3>
+                        Premium Coffee
+                    </h3>
+
+                    <p>
+                        Rich and aromatic coffee
+                        for your mornings.
+                    </p>
+
+                    <div class="product-price">
+                        ₹349
+                        <del>₹399</del>
+                    </div>
+
+                    <button
+                        onclick="addToCart('Premium Coffee')"
+                        class="add-cart"
+                    >
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PRODUCT 22 -->
+
+            <div class="product-card"
+                 data-category="groceries"
+                 data-name="snack pack">
+
+                <div class="product-image-container">
+
+                    <span class="sale-badge">
+                        15% OFF
+                    </span>
+
+                    <img
+                        src="images/image23.jpg"
+                        alt="Snack Pack"
+                    >
+
+                </div>
+
+                <div class="product-details">
+
+                    <span class="product-category">
+                        GROCERIES
+                    </span>
+
+                    <h3>
+                        Snack Pack
+                    </h3>
+
+                    <p>
+                        Tasty snacks for
+                        everyday cravings.
+                    </p>
+
+                    <div class="product-price">
+                        ₹249
+                        <del>₹299</del>
+                    </div>
+
+                    <button
+                        onclick="addToCart('Snack Pack')"
+                        class="add-cart"
+                    >
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================= BEAUTY ================= -->
+
+
+            <!-- PRODUCT 23 -->
+
+            <div class="product-card"
+                 data-category="beauty"
+                 data-name="red lipstick">
+
+                <div class="product-image-container">
+
+                    <span class="sale-badge">
+                        BESTSELLER
+                    </span>
+
+                    <img
+                        src="images/image24.jpg"
+                        alt="Red Lipstick"
+                    >
+
+                </div>
+
+                <div class="product-details">
+
+                    <span class="product-category">
+                        BEAUTY
+                    </span>
+
+                    <h3>
+                        Red Lipstick
+                    </h3>
+
+                    <p>
+                        Smooth and long-lasting
+                        lipstick.
+                    </p>
+
+                    <div class="product-price">
+                        ₹499
+                        <del>₹599</del>
+                    </div>
+
+                    <button
+                        onclick="addToCart('Red Lipstick')"
+                        class="add-cart"
+                    >
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PRODUCT 24 -->
+
+            <div class="product-card"
+                 data-category="beauty"
+                 data-name="skin care kit">
+
+                <div class="product-image-container">
+
+                    <span class="sale-badge">
+                        20% OFF
+                    </span>
+
+                    <img
+                        src="images/image25.jpg"
+                        alt="Skin Care Kit"
+                    >
+
+                </div>
+
+                <div class="product-details">
+
+                    <span class="product-category">
+                        BEAUTY
+                    </span>
+
+                    <h3>
+                        Skin Care Kit
+                    </h3>
+
+                    <p>
+                        Daily skincare essentials
+                        in one kit.
+                    </p>
+
+                    <div class="product-price">
+                        ₹899
+                        <del>₹1,099</del>
+                    </div>
+
+                    <button
+                        onclick="addToCart('Skin Care Kit')"
+                        class="add-cart"
+                    >
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PRODUCT 25 -->
+
+            <div class="product-card"
+                 data-category="beauty"
+                 data-name="luxury perfume">
+
+                <div class="product-image-container">
+
+                    <span class="sale-badge">
+                        15% OFF
+                    </span>
+
+                    <img
+                        src="images/image26.jpg"
+                        alt="Luxury Perfume"
+                    >
+
+                </div>
+
+                <div class="product-details">
+
+                    <span class="product-category">
+                        BEAUTY
+                    </span>
+
+                    <h3>
+                        Luxury Perfume
+                    </h3>
+
+                    <p>
+                        Fresh and elegant
+                        fragrance.
+                    </p>
+
+                    <div class="product-price">
+                        ₹1,199
+                        <del>₹1,399</del>
+                    </div>
+
+                    <button
+                        onclick="addToCart('Luxury Perfume')"
+                        class="add-cart"
+                    >
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PRODUCT 26 -->
+
+            <div class="product-card"
+                 data-category="clothing"
+                 data-name="black fashion jacket">
+
+                <div class="product-image-container">
+
+                    <span class="sale-badge">
+                        35% OFF
+                    </span>
+
+                    <img
+                        src="images/image12.jpg"
+                        alt="Black Fashion Jacket"
+                    >
+
+                </div>
+
+                <div class="product-details">
+
+                    <span class="product-category">
+                        CLOTHING
+                    </span>
+
+                    <h3>
+                        Black Fashion Jacket
+                    </h3>
+
+                    <p>
+                        Trendy jacket for a
+                        bold stylish appearance.
+                    </p>
+
+                    <div class="product-price">
+                        ₹2,499
+                        <del>₹3,799</del>
+                    </div>
+
+                    <button
+                        onclick="addToCart('Black Fashion Jacket')"
+                        class="add-cart"
+                    >
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+                         OFFERS
+    ====================================================== -->
+
+    <section id="offers" class="offers-section">
+
+        <div class="section-heading light-heading">
+
+            <p>LIMITED TIME DEALS</p>
+
+            <h2>
+                Special
+                <span>Offers</span>
+            </h2>
+
+            <div class="heading-line"></div>
+
+        </div>
+
+
+        <div class="offers-grid">
+
+
+            <div class="offer-card">
+
+                <div class="offer-number">
+                    20%
+                </div>
+
+                <h3>
+                    20% OFF
+                </h3>
+
+                <p>
+                    Get 20% discount on
+                    selected products.
+                </p>
+
+                <strong>
+                    CODE: NAAYUU20
+                </strong>
+
+            </div>
+
+
+
+            <div class="offer-card">
+
+                <div class="offer-number">
+                    B1G1
+                </div>
+
+                <h3>
+                    BUY 1 GET 1
+                </h3>
+
+                <p>
+                    Buy selected products and
+                    get another one free.
+                </p>
+
+                <strong>
+                    LIMITED OFFER
+                </strong>
+
+            </div>
+
+
+
+            <div class="offer-card">
+
+                <div class="offer-number">
+                    FREE
+                </div>
+
+                <h3>
+                    FREE DELIVERY
+                </h3>
+
+                <p>
+                    Free delivery on orders
+                    above ₹999.
+                </p>
+
+                <strong>
+                    SHOP NOW
+                </strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+                         ABOUT
+    ====================================================== -->
+
+    <section id="about" class="about-section">
+
+        <div class="about-image">
+
+            <img
+                src="images/hero5.jpg"
+                alt="NAAYUU Shopping"
+            >
+
+        </div>
+
+
+        <div class="about-content">
+
+            <p class="about-label">
+                ABOUT NAAYUU
+            </p>
+
+            <h2>
+                Shopping Made
+                <span>For You.</span>
+            </h2>
+
+            <p>
+                NAAYUU is a modern online shopping destination
+                bringing fashion, electronics, books, beauty,
+                groceries and accessories together in one place.
+            </p>
+
+            <p>
+                Explore trendy products, useful everyday items
+                and exciting offers while enjoying a simple
+                and attractive shopping experience.
+            </p>
+
+            <a
+                href="#products"
+                class="about-btn"
+            >
+                Explore Products
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+                         CONTACT
+    ====================================================== -->
+
+    <section id="contact" class="contact-section">
+
+        <div class="section-heading">
+
+            <p>GET IN TOUCH</p>
+
+            <h2>
+                Contact
+                <span>Us</span>
+            </h2>
+
+            <div class="heading-line"></div>
+
+        </div>
+
+
+        <div class="contact-container">
+
+
+            <div class="contact-info">
+
+                <h3>
+                    Let's Talk
+                    <span>Shopping.</span>
+                </h3>
+
+                <p>
+                    Have a question about our products?
+                    Send us a message and our team
+                    will be happy to help.
+                </p>
+
+                <div class="contact-detail">
+                    📧 support@naayuu.com
+                </div>
+
+                <div class="contact-detail">
+                    📞 +91 98765 43210
+                </div>
+
+                <div class="contact-detail">
+                    📍 Punjab, India
+                </div>
+
+            </div>
+
+
+            <form id="contactForm">
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Your Name"
+                    required
+                >
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Your Email"
+                    required
+                >
+
+                <textarea
+                    id="message"
+                    placeholder="Your Message"
+                    rows="6"
+                    required
+                ></textarea>
+
+                <button type="submit">
+                    Send Message →
+                </button>
+
+            </form>
+
+        </div>
+
+
+        <div
+            id="formMessage"
+            class="form-message"
+        ></div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+                         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        <div class="footer-content">
+
+
+            <div class="footer-brand">
+
+                <h2>
+                    NAAYUU
+                </h2>
+
+                <p>
+                    Style That Defines You.
+                </p>
+
+                <p>
+                    Fashion • Shopping • Lifestyle
+                </p>
+
+            </div>
+
+
+
+            <div class="footer-column">
+
+                <h4>
+                    Quick Links
+                </h4>
+
+                <a href="#home">
+                    Home
+                </a>
+
+                <a href="#products">
+                    Products
+                </a>
+
+                <a href="#offers">
+                    Offers
+                </a>
+
+                <a href="#about">
+                    About
+                </a>
+
+                <a href="#contact">
+                    Contact
+                </a>
+
+            </div>
+
+
+
+            <div class="footer-column">
+
+                <h4>
+                    Categories
+                </h4>
+
+                <a href="#products">
+                    Clothing
+                </a>
+
+                <a href="#products">
+                    Shoes
+                </a>
+
+                <a href="#products">
+                    Books
+                </a>
+
+                <a href="#products">
+                    Electronics
+                </a>
+
+                <a href="#products">
+                    Beauty
+                </a>
+
+            </div>
+
+
+
+            <div class="footer-column">
+
+                <h4>
+                    Contact
+                </h4>
+
+                <p>
+                    support@naayuu.com
+                </p>
+
+                <p>
+                    +91 98765 43210
+                </p>
+
+                <p>
+                    Punjab, India
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 NAAYUU.
+            All Rights Reserved.
+
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+```
